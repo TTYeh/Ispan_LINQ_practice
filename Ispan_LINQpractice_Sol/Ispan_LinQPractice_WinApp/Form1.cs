@@ -50,6 +50,7 @@ namespace Ispan_LinQPractice_WinApp
             textBoxResult.Text = string.Empty;
             string[] arrCitys = { "Los Angeles", "Amsterdam", "Vilnius" };
             char[] arrChar = { 'A', 'V', 'P' };
+            // 選擇A V P開頭的
             IEnumerable<string> qCity = from city in arrCitys
                                         where arrChar.Contains(city[0])
                                         select city;
@@ -118,6 +119,72 @@ namespace Ispan_LinQPractice_WinApp
                            COUNT = gEmp.Count()
                        };
             dataGridView1.DataSource = qEmp.ToList();
+        }
+
+        private void buttonCreateDat_Click(object sender, EventArgs e)
+        {
+            DataSet1 dsNorthWind = new DataSet1();
+            TestTable2TableAdapter table2 = new TestTable2TableAdapter();
+            table2.Fill(dsNorthWind.TestTable2);
+            var qEmp = from emp in dsNorthWind.TestTable2
+                       select new
+                       {
+                           Number = emp.Num
+                       };
+            dataGridView1.DataSource = qEmp.ToList();
+            //DataTable dataTable = new DataTable();
+            //dataTable.Columns.Add("id", typeof(int));
+            ////dataTable.Columns.Add("name", typeof(string));
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    DataRow row = dataTable.NewRow();
+            //    row[0] = i;
+            //    //row[1] = "name" + i;
+            //    dataTable.Rows.Add(row);
+            //}
+            //dataGridView1.DataSource = dataTable;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataSet1 dsNorthWind = new DataSet1();
+            TestTable2TableAdapter table2 = new TestTable2TableAdapter();
+            table2.Fill(dsNorthWind.TestTable2);
+            var qEmp = from emp in dsNorthWind.TestTable2
+                       where emp.Num % 2 == 0
+                       select new
+                       {
+                           Number =  emp.Num
+                       };
+            dataGridView1.DataSource = qEmp.ToList();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataSet1 dsNorthWind = new DataSet1();
+            TestTable2TableAdapter table2 = new TestTable2TableAdapter();
+            table2.Fill(dsNorthWind.TestTable2);
+            var qEmp = from emp in dsNorthWind.TestTable2
+                       group emp by (emp.Num % 2 ==0 ) into gEmp
+                       select new
+                       {
+                           Key = gEmp.Key == true ? "偶數" : "奇數",
+                           COUNT = gEmp.Count()
+                       };
+
+
+
+            //group emp by emp.Country into gEmp
+            //           select new 
+            //           {
+            //               Country = gEmp.Key,
+            //               COUNT = gEmp.Count()
+            //           };
+            dataGridView1.DataSource = qEmp.ToList();
+
         }
     }
 }

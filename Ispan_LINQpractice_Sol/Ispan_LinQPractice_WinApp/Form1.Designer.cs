@@ -37,6 +37,9 @@
             this.buttonLinQObj = new System.Windows.Forms.Button();
             this.buttonQueryCategory = new System.Windows.Forms.Button();
             this.buttonGroupByLinQ = new System.Windows.Forms.Button();
+            this.buttonCreateDat = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +51,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(449, 344);
+            this.dataGridView1.Size = new System.Drawing.Size(449, 366);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonQuery
@@ -89,11 +92,14 @@
             this.textBoxResult.Location = new System.Drawing.Point(947, 48);
             this.textBoxResult.Multiline = true;
             this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(180, 344);
+            this.textBoxResult.Size = new System.Drawing.Size(180, 174);
             this.textBoxResult.TabIndex = 4;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.buttonCreateDat);
             this.panel1.Controls.Add(this.buttonGroupByLinQ);
             this.panel1.Controls.Add(this.buttonQueryCategory);
             this.panel1.Controls.Add(this.buttonLinQObj);
@@ -102,7 +108,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(49, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(692, 386);
+            this.panel1.Size = new System.Drawing.Size(701, 469);
             this.panel1.TabIndex = 5;
             // 
             // buttonLinQObj
@@ -139,6 +145,39 @@
             this.buttonGroupByLinQ.UseVisualStyleBackColor = true;
             this.buttonGroupByLinQ.Click += new System.EventHandler(this.buttonGroupByLinQ_Click);
             // 
+            // buttonCreateDat
+            // 
+            this.buttonCreateDat.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonCreateDat.Location = new System.Drawing.Point(208, 389);
+            this.buttonCreateDat.Name = "buttonCreateDat";
+            this.buttonCreateDat.Size = new System.Drawing.Size(154, 42);
+            this.buttonCreateDat.TabIndex = 6;
+            this.buttonCreateDat.Text = "LinQ_產生資料";
+            this.buttonCreateDat.UseVisualStyleBackColor = true;
+            this.buttonCreateDat.Click += new System.EventHandler(this.buttonCreateDat_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.Location = new System.Drawing.Point(368, 389);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 42);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "LinQ_篩選偶數";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.Location = new System.Drawing.Point(528, 389);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(154, 42);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "LinQ_篩選基數偶數群組";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -168,6 +207,9 @@
         private System.Windows.Forms.Button buttonLinQObj;
         private System.Windows.Forms.Button buttonQueryCategory;
         private System.Windows.Forms.Button buttonGroupByLinQ;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCreateDat;
     }
 }
 
