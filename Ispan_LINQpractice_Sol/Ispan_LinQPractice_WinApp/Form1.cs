@@ -146,18 +146,29 @@ namespace Ispan_LinQPractice_WinApp
             //dataGridView1.DataSource = dataTable;
 
         }
-
+ 
         private void button2_Click(object sender, EventArgs e)
         {
             DataSet1 dsNorthWind = new DataSet1();
             TestTable2TableAdapter table2 = new TestTable2TableAdapter();
             table2.Fill(dsNorthWind.TestTable2);
-            var qEmp = from emp in dsNorthWind.TestTable2
-                       where emp.Num % 2 == 0
+
+
+            var myArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 } ;
+            var qEmp = from emp in myArr
+                       where emp % 2 == 0
                        select new
                        {
-                           Number =  emp.Num
+                           Number = emp
                        };
+
+
+            //var qEmp = from emp in dsNorthWind.TestTable2
+            //           where emp.Num % 2 == 0
+            //           select new
+            //           {
+            //               Number =  emp.Num
+            //           };
             dataGridView1.DataSource = qEmp.ToList();
 
         }
