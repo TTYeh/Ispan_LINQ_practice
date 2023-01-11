@@ -22,7 +22,7 @@ namespace Ispan_LinQPractice_WinApp
         private void buttonQuery_Click(object sender, EventArgs e)
         {
             DataSet1 dsNorthWind = new DataSet1();
-            EmployeesTableAdapter taEmp =  new EmployeesTableAdapter();
+            EmployeesTableAdapter taEmp = new EmployeesTableAdapter();
             taEmp.Fill(dsNorthWind.Employees);
             dataGridView1.DataSource = taEmp.GetData();
         }
@@ -56,7 +56,7 @@ namespace Ispan_LinQPractice_WinApp
 
             foreach (string a in qCity)
             {
-                textBoxResult.Text += a +" \r\n";
+                textBoxResult.Text += a + " \r\n";
             }
         }
 
@@ -71,13 +71,52 @@ namespace Ispan_LinQPractice_WinApp
             //            select emp;
             //var data = qEmp0.ToList();
             var qEmp = from emp in dsNorthWind.Employees
-                       where emp.Country == "USA" 
+                       where emp.Country == "USA"
                        select new
                        {
                            Name = emp.FirstName + " " + emp.LastName,
                            emp.City
                        };
             //dataGridView1.DataSource = qEmp.ToList();
+            dataGridView1.DataSource = qEmp.ToList();
+        }
+
+        private void buttonQueryCategory_Click(object sender, EventArgs e)
+        {
+            DataSet1 dsNorthWind = new DataSet1();
+            CategoriesTableAdapter taCategory = new CategoriesTableAdapter();
+            taCategory.Fill(dsNorthWind.Categories);
+
+            var qC = from c in dsNorthWind.Categories
+                     select c.CategoryName into CC
+                     from intoC in CC
+                     select intoC;
+
+            //var qC = from c in dsNorthWind.Categories
+            //         select c.CategoryName ;
+            var qC2 = from c in dsNorthWind.Categories
+                      select new { CategoryName = c.CategoryName };
+            dataGridView1.DataSource = qC2.ToList();
+            string result = string.Empty;
+            foreach (var c in qC) {
+                result += c + "\n";
+            }
+            MessageBox.Show(result);
+
+        }
+
+        private void buttonGroupByLinQ_Click(object sender, EventArgs e)
+        {
+            DataSet1 dsNorthWind = new DataSet1();
+            EmployeesTableAdapter taEmp = new EmployeesTableAdapter();
+            taEmp.Fill(dsNorthWind.Employees);
+            var qEmp = from emp in dsNorthWind.Employees
+                       group emp by emp.Country into gEmp
+                       select new
+                       {
+                           Country = gEmp.Key,
+                           COUNT = gEmp.Count()
+                       };
             dataGridView1.DataSource = qEmp.ToList();
         }
     }

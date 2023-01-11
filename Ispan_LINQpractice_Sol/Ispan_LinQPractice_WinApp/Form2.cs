@@ -88,7 +88,6 @@ namespace Ispan_LinQPractice_WinApp
 
         private void buttonCreateButton_Click(object sender, EventArgs e)
         {
-            int a = 6;
             if (int.TryParse(textBox1.Text, out int buttonNums) == false) return;
             for (int i = 0; i < buttonNums; i++)
             {

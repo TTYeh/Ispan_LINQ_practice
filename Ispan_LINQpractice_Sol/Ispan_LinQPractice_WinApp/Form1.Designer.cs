@@ -35,6 +35,8 @@
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonLinQObj = new System.Windows.Forms.Button();
+            this.buttonQueryCategory = new System.Windows.Forms.Button();
+            this.buttonGroupByLinQ = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +94,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonGroupByLinQ);
+            this.panel1.Controls.Add(this.buttonQueryCategory);
             this.panel1.Controls.Add(this.buttonLinQObj);
             this.panel1.Controls.Add(this.buttonQuery2);
             this.panel1.Controls.Add(this.buttonQuery);
@@ -111,6 +115,29 @@
             this.buttonLinQObj.Text = "LinQ select 匿名類別";
             this.buttonLinQObj.UseVisualStyleBackColor = true;
             this.buttonLinQObj.Click += new System.EventHandler(this.buttonLinQObj_Click);
+            // 
+            // buttonQueryCategory
+            // 
+            this.buttonQueryCategory.Font = new System.Drawing.Font("新細明體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonQueryCategory.Location = new System.Drawing.Point(15, 246);
+            this.buttonQueryCategory.Name = "buttonQueryCategory";
+            this.buttonQueryCategory.Size = new System.Drawing.Size(184, 64);
+            this.buttonQueryCategory.TabIndex = 7;
+            this.buttonQueryCategory.Text = "QueryCategory";
+            this.buttonQueryCategory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonQueryCategory.UseVisualStyleBackColor = true;
+            this.buttonQueryCategory.Click += new System.EventHandler(this.buttonQueryCategory_Click);
+            // 
+            // buttonGroupByLinQ
+            // 
+            this.buttonGroupByLinQ.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonGroupByLinQ.Location = new System.Drawing.Point(15, 319);
+            this.buttonGroupByLinQ.Name = "buttonGroupByLinQ";
+            this.buttonGroupByLinQ.Size = new System.Drawing.Size(184, 64);
+            this.buttonGroupByLinQ.TabIndex = 8;
+            this.buttonGroupByLinQ.Text = "GroupByLinQ";
+            this.buttonGroupByLinQ.UseVisualStyleBackColor = true;
+            this.buttonGroupByLinQ.Click += new System.EventHandler(this.buttonGroupByLinQ_Click);
             // 
             // Form1
             // 
@@ -139,6 +166,8 @@
         private System.Windows.Forms.TextBox textBoxResult;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonLinQObj;
+        private System.Windows.Forms.Button buttonQueryCategory;
+        private System.Windows.Forms.Button buttonGroupByLinQ;
     }
 }
 
