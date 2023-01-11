@@ -44,5 +44,41 @@ namespace Ispan_LinQPractice_WinApp
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxResult.Text = string.Empty;
+            string[] arrCitys = { "Los Angeles", "Amsterdam", "Vilnius" };
+            char[] arrChar = { 'A', 'V', 'P' };
+            IEnumerable<string> qCity = from city in arrCitys
+                                        where arrChar.Contains(city[0])
+                                        select city;
+
+            foreach (string a in qCity)
+            {
+                textBoxResult.Text += a +" \r\n";
+            }
+        }
+
+        private void buttonLinQObj_Click(object sender, EventArgs e)
+        {
+            DataSet1 dsNorthWind = new DataSet1();
+            EmployeesTableAdapter taEmp = new EmployeesTableAdapter();
+            taEmp.Fill(dsNorthWind.Employees);
+
+            //var qEmp0 = from emp in dsNorthWind.Employees
+            //            where emp.Country != null
+            //            select emp;
+            //var data = qEmp0.ToList();
+            var qEmp = from emp in dsNorthWind.Employees
+                       where emp.Country == "USA" 
+                       select new
+                       {
+                           Name = emp.FirstName + " " + emp.LastName,
+                           emp.City
+                       };
+            //dataGridView1.DataSource = qEmp.ToList();
+            dataGridView1.DataSource = qEmp.ToList();
+        }
     }
 }
