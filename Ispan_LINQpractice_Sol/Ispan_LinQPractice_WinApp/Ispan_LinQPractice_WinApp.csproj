@@ -90,6 +90,12 @@
     <Compile Include="FormEntityFramework.Designer.cs">
       <DependentUpon>FormEntityFramework.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEntityJoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntityJoin.Designer.cs">
+      <DependentUpon>FormEntityJoin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHwEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthWindModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Products.cs">
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -121,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEntityFramework.resx">
       <DependentUpon>FormEntityFramework.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntityJoin.resx">
+      <DependentUpon>FormEntityJoin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHwEmployees.resx">
       <DependentUpon>FormHwEmployees.cs</DependentUpon>

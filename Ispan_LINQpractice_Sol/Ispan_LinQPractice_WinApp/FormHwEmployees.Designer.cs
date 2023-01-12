@@ -37,7 +37,7 @@
             // dataGridViewRight
             // 
             this.dataGridViewRight.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRight.Location = new System.Drawing.Point(400, 57);
+            this.dataGridViewRight.Location = new System.Drawing.Point(443, 36);
             this.dataGridViewRight.Name = "dataGridViewRight";
             this.dataGridViewRight.RowHeadersWidth = 51;
             this.dataGridViewRight.RowTemplate.Height = 27;
@@ -47,7 +47,7 @@
             // dataGridViewLeft
             // 
             this.dataGridViewLeft.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLeft.Location = new System.Drawing.Point(38, 57);
+            this.dataGridViewLeft.Location = new System.Drawing.Point(84, 36);
             this.dataGridViewLeft.Name = "dataGridViewLeft";
             this.dataGridViewLeft.RowHeadersWidth = 51;
             this.dataGridViewLeft.RowTemplate.Height = 27;
