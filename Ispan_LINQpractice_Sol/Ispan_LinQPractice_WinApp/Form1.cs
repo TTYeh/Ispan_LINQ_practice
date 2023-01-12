@@ -197,5 +197,28 @@ namespace Ispan_LinQPractice_WinApp
             dataGridView1.DataSource = qEmp.ToList();
 
         }
+
+        private void buttonAggrecation_Click(object sender, EventArgs e)
+        {
+            DataSet1 dsNorthWind = new DataSet1();
+            ProductsTableAdapter prodTable = new ProductsTableAdapter();
+            prodTable.Fill(dsNorthWind.Products);
+
+            var qProd = from prod in dsNorthWind.Products
+                        group prod by prod.CategoryID into g
+                        where g.Count() > 5
+                        orderby g.Count() descending
+                        select new
+                        {
+                            // 代理函式
+                            Category = g.Key,
+                            ProductCount = g.Count(),
+                            MaxUnitPrice = g.Max(mbox => mbox.UnitPrice),
+                            MinUnitPrice =g.Min(mbox => mbox.UnitPrice),
+                            SumUnitPrice = g.Sum(mbox => mbox.UnitPrice),
+                            AvgUnitPrice = g.Average(mbox => mbox.UnitPrice)
+                        };
+            dataGridView1.DataSource = qProd.ToList();
+        }
     }
 }

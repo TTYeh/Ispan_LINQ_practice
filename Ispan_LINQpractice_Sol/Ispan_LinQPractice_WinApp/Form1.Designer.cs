@@ -34,12 +34,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonLinQObj = new System.Windows.Forms.Button();
-            this.buttonQueryCategory = new System.Windows.Forms.Button();
-            this.buttonGroupByLinQ = new System.Windows.Forms.Button();
-            this.buttonCreateDat = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCreateDat = new System.Windows.Forms.Button();
+            this.buttonGroupByLinQ = new System.Windows.Forms.Button();
+            this.buttonQueryCategory = new System.Windows.Forms.Button();
+            this.buttonLinQObj = new System.Windows.Forms.Button();
+            this.buttonAggrecation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonAggrecation);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.buttonCreateDat);
@@ -111,16 +113,49 @@
             this.panel1.Size = new System.Drawing.Size(701, 469);
             this.panel1.TabIndex = 5;
             // 
-            // buttonLinQObj
+            // button3
             // 
-            this.buttonLinQObj.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.buttonLinQObj.Location = new System.Drawing.Point(15, 167);
-            this.buttonLinQObj.Name = "buttonLinQObj";
-            this.buttonLinQObj.Size = new System.Drawing.Size(184, 64);
-            this.buttonLinQObj.TabIndex = 6;
-            this.buttonLinQObj.Text = "LinQ select 匿名類別";
-            this.buttonLinQObj.UseVisualStyleBackColor = true;
-            this.buttonLinQObj.Click += new System.EventHandler(this.buttonLinQObj_Click);
+            this.button3.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.Location = new System.Drawing.Point(528, 389);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(154, 42);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "LinQ_篩選基數偶數群組";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.Location = new System.Drawing.Point(368, 389);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 42);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "LinQ_篩選偶數";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buttonCreateDat
+            // 
+            this.buttonCreateDat.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonCreateDat.Location = new System.Drawing.Point(208, 389);
+            this.buttonCreateDat.Name = "buttonCreateDat";
+            this.buttonCreateDat.Size = new System.Drawing.Size(154, 42);
+            this.buttonCreateDat.TabIndex = 6;
+            this.buttonCreateDat.Text = "LinQ_產生資料";
+            this.buttonCreateDat.UseVisualStyleBackColor = true;
+            this.buttonCreateDat.Click += new System.EventHandler(this.buttonCreateDat_Click);
+            // 
+            // buttonGroupByLinQ
+            // 
+            this.buttonGroupByLinQ.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonGroupByLinQ.Location = new System.Drawing.Point(15, 319);
+            this.buttonGroupByLinQ.Name = "buttonGroupByLinQ";
+            this.buttonGroupByLinQ.Size = new System.Drawing.Size(184, 64);
+            this.buttonGroupByLinQ.TabIndex = 8;
+            this.buttonGroupByLinQ.Text = "GroupByLinQ";
+            this.buttonGroupByLinQ.UseVisualStyleBackColor = true;
+            this.buttonGroupByLinQ.Click += new System.EventHandler(this.buttonGroupByLinQ_Click);
             // 
             // buttonQueryCategory
             // 
@@ -134,49 +169,27 @@
             this.buttonQueryCategory.UseVisualStyleBackColor = true;
             this.buttonQueryCategory.Click += new System.EventHandler(this.buttonQueryCategory_Click);
             // 
-            // buttonGroupByLinQ
+            // buttonLinQObj
             // 
-            this.buttonGroupByLinQ.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.buttonGroupByLinQ.Location = new System.Drawing.Point(15, 319);
-            this.buttonGroupByLinQ.Name = "buttonGroupByLinQ";
-            this.buttonGroupByLinQ.Size = new System.Drawing.Size(184, 64);
-            this.buttonGroupByLinQ.TabIndex = 8;
-            this.buttonGroupByLinQ.Text = "GroupByLinQ";
-            this.buttonGroupByLinQ.UseVisualStyleBackColor = true;
-            this.buttonGroupByLinQ.Click += new System.EventHandler(this.buttonGroupByLinQ_Click);
+            this.buttonLinQObj.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonLinQObj.Location = new System.Drawing.Point(15, 167);
+            this.buttonLinQObj.Name = "buttonLinQObj";
+            this.buttonLinQObj.Size = new System.Drawing.Size(184, 64);
+            this.buttonLinQObj.TabIndex = 6;
+            this.buttonLinQObj.Text = "LinQ select 匿名類別";
+            this.buttonLinQObj.UseVisualStyleBackColor = true;
+            this.buttonLinQObj.Click += new System.EventHandler(this.buttonLinQObj_Click);
             // 
-            // buttonCreateDat
+            // buttonAggrecation
             // 
-            this.buttonCreateDat.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.buttonCreateDat.Location = new System.Drawing.Point(208, 389);
-            this.buttonCreateDat.Name = "buttonCreateDat";
-            this.buttonCreateDat.Size = new System.Drawing.Size(154, 42);
-            this.buttonCreateDat.TabIndex = 6;
-            this.buttonCreateDat.Text = "LinQ_產生資料";
-            this.buttonCreateDat.UseVisualStyleBackColor = true;
-            this.buttonCreateDat.Click += new System.EventHandler(this.buttonCreateDat_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(368, 389);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 42);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "LinQ_篩選偶數";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("新細明體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(528, 389);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 42);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "LinQ_篩選基數偶數群組";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonAggrecation.Font = new System.Drawing.Font("新細明體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonAggrecation.Location = new System.Drawing.Point(15, 389);
+            this.buttonAggrecation.Name = "buttonAggrecation";
+            this.buttonAggrecation.Size = new System.Drawing.Size(184, 64);
+            this.buttonAggrecation.TabIndex = 11;
+            this.buttonAggrecation.Text = "Product彙總函數";
+            this.buttonAggrecation.UseVisualStyleBackColor = true;
+            this.buttonAggrecation.Click += new System.EventHandler(this.buttonAggrecation_Click);
             // 
             // Form1
             // 
@@ -210,6 +223,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonCreateDat;
+        private System.Windows.Forms.Button buttonAggrecation;
     }
 }
 
