@@ -50,17 +50,17 @@ namespace Ispan_LinQPractice_WinApp
         private void buttonOuterJoin_Click(object sender, EventArgs e)
         {
             List<TestObj> listUser = new List<TestObj>() {
-                new TestObj(){ ComNo = 1, UserName = "apple"},
-                new TestObj(){ ComNo = 2, UserName = "banana"},
-                new TestObj(){ ComNo = 4, UserName = "cake"},
+                new TestObj(){ ComNo = 1, UserName = "Jack"},
+                new TestObj(){ ComNo = 2, UserName = "Kitty"},
+                new TestObj(){ ComNo = 4, UserName = "Mike"},
 
             };
 
             List<TestObj> listCom = new List<TestObj>() {
-                new TestObj(){ ComNo = 1, ComName = "1111"},
-                new TestObj(){ ComNo = 2, ComName = "2222"},
-                new TestObj(){ ComNo = 3, ComName = "3333"},
-                new TestObj(){ ComNo = 4, ComName = "4444"},
+                new TestObj(){ ComNo = 1, ComName = "TSMC"},
+                new TestObj(){ ComNo = 2, ComName = "Wistron"},
+                new TestObj(){ ComNo = 3, ComName = "Quanta"},
+                new TestObj(){ ComNo = 4, ComName = "Amozon"},
             };
 
 
@@ -70,6 +70,7 @@ namespace Ispan_LinQPractice_WinApp
                            new TestObj { ComNo = -1, UserName = "This is Null" }
                            )
                        select new { com.ComNo, com.ComName, uccu.UserName };
+
             //List<Contact> lsContact = new List<Contact>
             //{
             //    new Contact{ ComID = 1 , ContactName = "John"},
