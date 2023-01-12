@@ -16,7 +16,8 @@ namespace Ispan_LinQPractice_WinApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormEntityFramework());
+            Application.Run(new FormHwEmployees() );
+            //Application.Run(new FormEntityFramework());
         }
     }
 }
